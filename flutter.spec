@@ -1,3 +1,5 @@
+%define _build_pkgcheck_set %{_bindir}/true
+
 %global _channel stable
 %global _version 2.10.4
 %global _install_dir /opt/flutter

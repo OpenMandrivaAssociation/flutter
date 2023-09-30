@@ -1,3 +1,8 @@
+# FIXME This package is built the wrong way, relying on upstream binaries
+# that may well be linked to bogus libraries, contain backdoors, or worse.
+# This is ok while the package is in unsupported, but unless it is redone,
+# it can never move to main.
+
 %define _build_pkgcheck_set %{_bindir}/true
 
 %global _channel stable

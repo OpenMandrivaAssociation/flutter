@@ -9,8 +9,8 @@
 %global _install_dir /opt/flutter
 
 Name: flutter
-Version: 3.13.0
-Release: 1%{?dist}
+Version: 3.16.2
+Release: 1%{?dist}1
 License: BSD-3-Clause
 Url: http://flutter.dev
 Summary: Flutter

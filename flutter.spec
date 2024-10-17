@@ -12,7 +12,7 @@ Name: flutter
 Version: 3.19.1
 Release: 1%{?dist}1
 License: BSD-3-Clause
-Url: http://flutter.dev
+Url: https://flutter.dev
 Summary: Flutter
 
 Source0: https://storage.googleapis.com/flutter_infra_release/releases/%{_channel}/linux/flutter_linux_%{version}-%{_channel}.tar.xz

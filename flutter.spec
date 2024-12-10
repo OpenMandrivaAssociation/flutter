@@ -9,7 +9,7 @@
 %global _install_dir /opt/flutter
 
 Name: flutter
-Version: 3.24.4
+Version: 3.24.5
 Release: 1%{?dist}1
 License: BSD-3-Clause
 Url: https://flutter.dev

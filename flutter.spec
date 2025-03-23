@@ -19,8 +19,17 @@ Source0: https://storage.googleapis.com/flutter_infra_release/releases/%{_channe
 
 BuildRequires: tar
 
-Requires: bash coreutils curl file git libGLU1 unzip which xz zip
 
+Requires: bash       
+Requires: coreutils
+Requires: curl 
+Requires: file
+Requires: git
+Requires: libglu-devel
+Requires: unzip
+Requires: which
+Requires: xz
+Requires: zip
 ExclusiveArch: %{ix86} %{x86_64}
 
 %description

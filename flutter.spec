@@ -25,7 +25,7 @@ Requires: coreutils
 Requires: curl 
 Requires: file
 Requires: git
-Requires: libglu-devel
+Requires: lib64glu-devel
 Requires: unzip
 Requires: which
 Requires: xz

@@ -10,7 +10,7 @@
 
 Name: flutter
 Version: 3.24.5
-Release: 1%{?dist}1
+Release: 1
 License: BSD-3-Clause
 Url: https://flutter.dev
 Summary: Flutter
@@ -30,7 +30,7 @@ Requires: unzip
 Requires: which
 Requires: xz
 Requires: zip
-ExclusiveArch: %{ix86} %{x86_64}
+
 
 %description
 Flutter is an open source UI toolkit for building beautiful, natively compiled applications for mobile, web, desktop, and embedded devices from a single codebase. 

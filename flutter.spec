@@ -1,6 +1,6 @@
 Name:		flutter
 Version:	3.29.0
-Release:	3
+Release:	4
 Summary:	SDK for crafting beautiful, fast user experiences from a single codebase
 License:	BSD-3-Clause
 URL:		https://flutter.dev
@@ -34,7 +34,7 @@ Requires:   %{name} = %{version}-%{release}
 Development files for %{name}
 
 %prep
-tar xf %{SOURCE0}
+%autosetup -p1
 
 %build
 

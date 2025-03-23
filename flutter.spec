@@ -1,6 +1,6 @@
 Name:		flutter
 Version:	3.29.0
-Release:	2
+Release:	3
 Summary:	SDK for crafting beautiful, fast user experiences from a single codebase
 License:	BSD-3-Clause
 URL:		https://flutter.dev
@@ -22,7 +22,6 @@ Requires:	file
 Requires:	which
 Requires:	zip
 Requires:	xz
-ExclusiveArch:	%{x86_64}
 
 %description
 Flutter transforms the app development process. Build, test, and deploy

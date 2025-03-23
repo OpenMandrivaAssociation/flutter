@@ -1,3 +1,5 @@
+%global debug_package %{nil}
+
 Name:		flutter
 Version:	3.29.0
 Release:	4
@@ -39,8 +41,8 @@ Development files for %{name}
 %build
 
 %install
-mkdir -p %{buildroot}%{_datadir} %{buildroot}%{_bindir}
-mv %{name}-%{version} %{buildroot}%{_datadir}/
+mkdir -p %{buildroot}%{_datadir}/%{name}-%{version} %{buildroot}%{_bindir}
+mv * %{buildroot}%{_datadir}/%{name}-%{version}
 
 # wrapper script
 cat << EOF > %{buildroot}%{_bindir}/%{name}
@@ -52,7 +54,6 @@ EOF
 %files
 %attr(0755,root,root) %{_bindir}/%{name}
 %{_datadir}/%{name}-%{version}/bin
-%{_datadir}/%{name}-%{version}/.github
 %{_datadir}/%{name}-%{version}/C*
 %{_datadir}/%{name}-%{version}/AUTHORS
 %{_datadir}/%{name}-%{version}/DEPS
@@ -63,9 +64,6 @@ EOF
 %{_datadir}/%{name}-%{version}/analysis_options.yaml
 %{_datadir}/%{name}-%{version}/flutter_console.bat
 %{_datadir}/%{name}-%{version}/dartdoc_options.yaml
-%{_datadir}/%{name}-%{version}/.ci.yaml
-%{_datadir}/%{name}-%{version}/.gitattributes
-%{_datadir}/%{name}-%{version}/.vscode/settings.json
 %{_datadir}/%{name}-%{version}/docs
 %files devel
 %{_datadir}/%{name}-%{version}/packages

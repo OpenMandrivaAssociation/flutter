@@ -1,15 +1,12 @@
-%global debug_package %{nil}
-
 Name:		flutter
 Version:	3.29.0
-Release:	5
+Release:	7
 Summary:	SDK for crafting beautiful, fast user experiences from a single codebase
 License:	BSD-3-Clause
 URL:		https://flutter.dev
 Group:		Development/Other
-Source0:	https://github.com/flutter/flutter/archive/refs/tags/%{version}.tar.gz
-
-
+Source0:	https://storage.googleapis.com/flutter_infra_release/releases/stable/linux/flutter_linux_%{version}-stable.tar.xz
+Source100:	flutter.rpmlintrc
 Requires:	bash
 Requires:	cmake
 Requires:	clang
@@ -24,49 +21,28 @@ Requires:	file
 Requires:	which
 Requires:	zip
 Requires:	xz
+ExclusiveArch:	%{x86_64}
 
 %description
 Flutter transforms the app development process. Build, test, and deploy
 beautiful mobile, web, desktop, and embedded apps from a single codebase.
 
-%package    devel
-Summary:    Development files for %{name}
-Requires:   %{name} = %{version}-%{release}
-%description devel
-Development files for %{name}
-
 %prep
-%autosetup -p1
+tar xf %{SOURCE0}
 
 %build
 
 %install
-mkdir -p %{buildroot}%{_datadir}/%{name}-%{version} %{buildroot}%{_bindir}
-mv * %{buildroot}%{_datadir}/%{name}-%{version}
+mkdir -p %{buildroot}%{_datadir} %{buildroot}%{_bindir}
+mv %{name} %{buildroot}%{_datadir}/
 
 # wrapper script
 cat << EOF > %{buildroot}%{_bindir}/%{name}
 #!/bin/sh
-export PATH="$PATH:%{_datadir}/%{name}-%{version}/bin"
-exec %{_datadir}/%{name}-%{version}/bin/flutter "$@"
+export PATH="$PATH:%{_datadir}/%{name}/bin"
+exec %{_datadir}/%{name}/bin/flutter "$@"
 EOF
 
 %files
 %attr(0755,root,root) %{_bindir}/%{name}
-%{_datadir}/%{name}-%{version}/bin
-%{_datadir}/%{name}-%{version}/C*
-%{_datadir}/%{name}-%{version}/AUTHORS
-%{_datadir}/%{name}-%{version}/DEPS
-%{_datadir}/%{name}-%{version}/LICENSE
-%{_datadir}/%{name}-%{version}/PATENT_GRANT
-%{_datadir}/%{name}-%{version}/README.md
-%{_datadir}/%{name}-%{version}/TESTOWNERS
-%{_datadir}/%{name}-%{version}/analysis_options.yaml
-%{_datadir}/%{name}-%{version}/flutter_console.bat
-%{_datadir}/%{name}-%{version}/dartdoc_options.yaml
-%{_datadir}/%{name}-%{version}/docs
-%files devel
-%{_datadir}/%{name}-%{version}/packages
-%{_datadir}/%{name}-%{version}/dev
-%{_datadir}/%{name}-%{version}/examples
-%{_datadir}/%{name}-%{version}/engine
+%{_datadir}/%{name}
